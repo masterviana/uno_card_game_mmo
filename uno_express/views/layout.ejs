@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>
+    <%-title%> - <%-Site%>
+  </title>
+  <script type="text/javascript">
+    if (top.location !== self.location) {
+      top.location = self.location
+    } else {
+      if (top !== self) {
+        if (confirm("__ relaod ")) {
+          top.location.reload()
+        }
+      }
+    };
+  </script>
+  <script>
+    var info = <%- JSON.stringify({logined: logined, uid: uid, nick: nick, win: data.win, lost: data.lost}) %>;
+  </script>
+  <script type="text/javascript" src="/js/jquery/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/vj/libvj.js"></script>
+  <script type="text/javascript" src="/js/base.js?<%=UIRev%>"></script>
+  <link href="/css/base.css?<%=UIRev%>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="main-container">
+    <%-body%>
+  </div>
+  <div class="main-footer">UNO online is open-source on <a href="https://github.com/breeswish/UNO-online" target="_blank">Github</a>.Vitor Viana<a href="/help" target="_blank">详细帮助</a></div>
+</body>
+
+</html>
